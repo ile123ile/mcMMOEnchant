@@ -1,10 +1,11 @@
-package com.blogspot.tuplestudios.enchantingskill;
+package com.blogspot.tuplestudios.enchantingskill.enchanting;
 
 import java.util.Random;
 
 import org.bukkit.Color;
 import org.bukkit.inventory.ItemStack;
 
+import com.blogspot.tuplestudios.enchantingskill.mcMMOEnchant;
 import com.gmail.nossr50.api.AbilityAPI;
 import com.gmail.nossr50.api.SkillAPI;
 import com.gmail.nossr50.datatypes.player.McMMOPlayer;

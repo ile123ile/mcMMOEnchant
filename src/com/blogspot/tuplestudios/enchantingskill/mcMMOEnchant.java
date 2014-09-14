@@ -2,6 +2,8 @@ package com.blogspot.tuplestudios.enchantingskill;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.blogspot.tuplestudios.enchantingskill.enchanting.EnchantingSkillManager;
+import com.blogspot.tuplestudios.enchantingskill.listeners.EnchantmentTableHandler;
 import com.gmail.nossr50.api.SkillAPI;
 
 public class mcMMOEnchant extends JavaPlugin

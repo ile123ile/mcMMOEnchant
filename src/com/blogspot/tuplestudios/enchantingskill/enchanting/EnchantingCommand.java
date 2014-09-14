@@ -1,4 +1,4 @@
-package com.blogspot.tuplestudios.enchantingskill;
+package com.blogspot.tuplestudios.enchantingskill.enchanting;
 
 import java.util.ArrayList;
 import java.util.List;

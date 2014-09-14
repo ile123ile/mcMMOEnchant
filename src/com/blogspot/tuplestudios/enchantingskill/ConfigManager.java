@@ -2,6 +2,8 @@ package com.blogspot.tuplestudios.enchantingskill;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
+import com.blogspot.tuplestudios.enchantingskill.enchanting.Enchanting;
+
 public class ConfigManager
 {
 	public static int getElderKnowledgeTierLevel( Enchanting.Tier tier )

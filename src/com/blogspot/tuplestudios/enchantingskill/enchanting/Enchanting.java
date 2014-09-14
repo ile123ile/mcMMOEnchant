@@ -1,7 +1,9 @@
-package com.blogspot.tuplestudios.enchantingskill;
+package com.blogspot.tuplestudios.enchantingskill.enchanting;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+
+import com.blogspot.tuplestudios.enchantingskill.ConfigManager;
 
 public class Enchanting
 {

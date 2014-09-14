@@ -1,4 +1,4 @@
-package com.blogspot.tuplestudios.enchantingskill;
+package com.blogspot.tuplestudios.enchantingskill.enchanting;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import com.blogspot.tuplestudios.enchantingskill.Enchanting.Enchantment;
+import com.blogspot.tuplestudios.enchantingskill.enchanting.Enchanting.Enchantment;
 
 public class EnchantingUtils
 {
