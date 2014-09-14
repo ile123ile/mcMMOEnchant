@@ -1,0 +1,53 @@
+name: mcmmoenchant
+version: 0.0
+main: com.blogspot.tuplestudios.enchantingskill.mcMMOEnchant
+depend: [mcMMO]
+
+commands:
+    enchanting:
+        description: Detailed mcMMO skill info
+
+permissions:
+    mcmmo.skills.enchanting:
+        default: true
+        description: Implies all basic enchanting permissions
+        children:
+            mcmmo.ability.enchanting: true
+            mcmmo.ability.enchanting.elderknowledge: true
+            mcmmo.commands.enchanting: true
+            mcmmo.commands.mctop.enchanting: true
+            mcmmo.commands.skillreset.enchanting: true
+    mcmmo.ability.enchanting.elderknowledge:
+        description: Allows access to the Elder Knowledge ability
+    mcmmo.commands.enchanting:
+        description: Allows access to the enchanting command
+    mcmmo.commands.mctop.enchanting:
+        description: Allows access to the mctop command for enchanting
+    mcmmo.commands.skillreset.enchanting:
+        description: Allows access to the skillreset command for enchanting
+    mcmmo.commands.skillreset.others.enchanting:
+        description: Allows access to the skillreset command for enchanting for other players
+    mcmmo.perks.lucky.enchanting:
+        default: false
+        description: Gives Enchanting abilities & skills a 33.3% better chance to activate.
+    mcmmo.perks.xp.150percentboost.enchanting:
+        default: false
+        description: Multiplies incoming Enchanting XP by 2.5
+    mcmmo.perks.xp.50percentboost.enchanting:
+        default: false
+        description: Multiplies incoming Enchanting XP by 1.5
+    mcmmo.perks.xp.10percentboost.enchanting:
+        default: false
+        description: Multiplies incoming Enchanting XP by 1.1
+    mcmmo.perks.xp.customboost.enchanting:
+        default: false
+        description: Multiplies incoming Enchanting XP by the boost amount defined in the experience config
+    mcmmo.perks.xp.double.enchanting:
+        default: false
+        description: Doubles incoming Enchanting XP
+    mcmmo.perks.xp.quadruple.enchanting:
+        default: false
+        description: Quadruples incoming Enchanting XP
+    mcmmo.perks.xp.triple.enchanting:
+        default: false
+        description: Triples incoming Enchanting XP
