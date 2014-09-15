@@ -51,7 +51,7 @@ public class EnchantingUtils
 	public static boolean hasEnchantment( ItemStack item , Enchantment enchantment )
 	{
 		if( item == null ) return false;
-		if( !item.getItemMeta().hasLore() ) return false;
+		if( !item.hasItemMeta() ) return false;
 		return getEnchantmentIndex( item.getItemMeta().getLore() , enchantment.getName() ) != -1;
 	}
 	
