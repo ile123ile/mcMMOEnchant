@@ -9,7 +9,7 @@ public class Enchanting
 {
 	public enum Enchantment
 	{
-		SUPER( "Magical" , Tier.FOUR , Material.IRON_AXE );
+		SUPER( "Magical" , Tier.FOUR , Material.STICK );
 		
 		private String name;
 		private Tier tier;
@@ -85,6 +85,17 @@ public class Enchanting
 	
 	public static boolean canEnchant( Enchantment enchantment , ItemStack item , int enchantingLevel )
 	{
+		if( item.getEnchantments().size() != 0 )
+		{
+			return false;
+		}
+		for( Enchantment ench : Enchantment.values() )
+		{
+			if( EnchantingUtils.hasEnchantment( item , ench ) )
+			{
+				return false;
+			}
+		}
 		if( enchantingLevel > enchantment.getTier().getLevel() )
 		{
 			Material itemMaterial = item.getType();
