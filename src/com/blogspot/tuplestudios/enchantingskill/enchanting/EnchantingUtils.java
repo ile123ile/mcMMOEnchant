@@ -50,9 +50,24 @@ public class EnchantingUtils
 	
 	public static boolean hasEnchantment( ItemStack item , Enchantment enchantment )
 	{
-		if( item == null ) return false;
-		if( !item.hasItemMeta() ) return false;
+		if( item == null )
+			return false;
+		if( !item.hasItemMeta() )
+			return false;
 		return getEnchantmentIndex( item.getItemMeta().getLore() , enchantment.getName() ) != -1;
+	}
+	
+	public static boolean hasEnchantment( ItemStack item )
+	{
+		if( item.hasItemMeta() )
+		{
+			String firstLore = item.getItemMeta().getLore().get( 0 );
+			if( isEnchantment( firstLore ) )
+			{
+				return true;
+			}
+		}
+		return item.getEnchantments().size() != 0;
 	}
 	
 	private static int getEnchantmentIndex( List< String > lore , String enchantment )
@@ -69,26 +84,42 @@ public class EnchantingUtils
 	
 	private static boolean isEnchantment( String enchantmentString , String enchantment )
 	{
-		if( enchantmentString.length() < 5 )
-		{
-			return false;
-		}
-		if( !enchantmentString.contains( ChatColor.RESET.toString() + ChatColor.GRAY.toString() ) )
+		if( getEnchantmentNumeral( enchantmentString ) == null )
 		{
 			return false;
 		}
 		String[] enchantmentStrings = enchantmentString.split( " " );
+		String numeral = enchantmentStrings[ enchantmentStrings.length - 1 ];
+		return enchantmentString.substring( 0 , enchantmentString.length() - numeral.length() - 1 ).equals(
+				ChatColor.RESET.toString() + ChatColor.GRAY.toString() + enchantment );
+	}
+	
+	private static String getEnchantmentNumeral( String enchantmentString )
+	{
+		if( enchantmentString.length() < 5 )
+		{
+			return null;
+		}
+		if( !enchantmentString.contains( ChatColor.RESET.toString() + ChatColor.GRAY.toString() ) )
+		{
+			return null;
+		}
+		String[] enchantmentStrings = enchantmentString.split( " " );
 		if( enchantmentStrings.length < 2 )
 		{
-			return false;
+			return null;
 		}
 		String numeral = enchantmentStrings[ enchantmentStrings.length - 1 ];
 		if( !isNumeral( numeral ) )
 		{
-			return false;
+			return null;
 		}
-		return enchantmentString.substring( 0 , enchantmentString.length() - numeral.length() - 1 ).equals(
-				ChatColor.RESET.toString() + ChatColor.GRAY.toString() + enchantment );
+		return numeral;
+	}
+	
+	private static boolean isEnchantment( String enchantmentString )
+	{
+		return getEnchantmentNumeral( enchantmentString ) != null;
 	}
 	
 	private enum Numeral

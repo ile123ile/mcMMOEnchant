@@ -40,14 +40,7 @@ public class Enchanting
 	
 	public enum Tier
 	{
-		EIGHT( 8 ), 
-		SEVEN( 7 ), 
-		SIX( 6 ), 
-		FIVE( 5 ), 
-		FOUR( 4 ), 
-		THREE( 3 ),
-		TWO( 2 ), 
-		ONE( 1 );
+		EIGHT( 8 ), SEVEN( 7 ), SIX( 6 ), FIVE( 5 ), FOUR( 4 ), THREE( 3 ), TWO( 2 ), ONE( 1 );
 		
 		int numerical;
 		
@@ -85,16 +78,9 @@ public class Enchanting
 	
 	public static boolean canEnchant( Enchantment enchantment , ItemStack item , int enchantingLevel )
 	{
-		if( item.getEnchantments().size() != 0 )
+		if( EnchantingUtils.hasEnchantment( item ) )
 		{
 			return false;
-		}
-		for( Enchantment ench : Enchantment.values() )
-		{
-			if( EnchantingUtils.hasEnchantment( item , ench ) )
-			{
-				return false;
-			}
 		}
 		if( enchantingLevel > enchantment.getTier().getLevel() )
 		{

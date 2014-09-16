@@ -3,6 +3,7 @@ package com.blogspot.tuplestudios.enchantingskill.enchanting;
 import java.util.Random;
 
 import org.bukkit.Color;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 
 import com.blogspot.tuplestudios.enchantingskill.mcMMOEnchant;
@@ -53,6 +54,10 @@ public class EnchantingSkillManager extends SkillManager
 			Random rand = new Random();
 			EnchantingUtils.addEnchantment( item , Enchanting.Enchantment.SUPER ,
 					( int ) Math.max( Math.min( ( rand.nextGaussian() + levelsSpent / 10 ) , 3 ) , 0d ) );
+		}
+		if( item.getEnchantments().size() == 0 )
+		{
+			item.addUnsafeEnchantment( Enchantment.KNOCKBACK , 1 );
 		}
 	}
 	
